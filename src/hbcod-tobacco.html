@@ -1,0 +1,60 @@
+<dom-module id="hbcod-tobacco">
+<link rel="import" href="/styles/custom.css" type="css">
+<link rel="import" href="/styles/custom-theme.css" type="css">
+<link rel="import" href="/src/simple-overlay.html">
+	<template>
+    <div class="page-container">
+    <!--<style include="custom-styles"></style>-->
+    <span class="page-title">Tobacco Use</span>
+    <hr class="hr"/>
+    <!-- <span class="section-title">Welcome!</span> -->
+    <span class="section-paragraph">
+    <br/>
+    <p>
+        <img id="imgT" class="container" src="/images/Tobacco.png" on-click="openDialog" on-load="onLoaded"/>
+    </p>
+    <br/>
+      <p>
+      	Check "Yes" if the use of tobacco contributed to death. Tobacco use may contribute to deaths from a wide variety of diseases. Check "No" if tobacco use did not contribute to the death. 
+      </p>
+    </span>
+
+    <simple-overlay id="backdropT" with-backdrop>
+        <img style="width:100%" src="/images/Tobacco.png"/>
+    </simple-overlay>
+</div>
+
+	</template>
+<script>
+Polymer({
+    is:"hbcod-tobacco",
+    openDialog: function(){
+
+        
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+    }
+    else{
+
+        var dialog = this.$.backdropT;
+            
+        if (dialog) {
+          dialog.open();
+        }
+    }
+    },
+    onLoaded: function() {
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+        this.$.imgT.style.width='100%';
+      }
+      else
+      {
+        this.$.imgT.style.width="auto";
+      }
+    }
+
+});
+
+</script>
+</dom-module>

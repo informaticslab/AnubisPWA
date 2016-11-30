@@ -1,0 +1,56 @@
+<dom-module id="hbcod-part2">
+<link rel="import" href="/styles/custom.css" type="css">
+<link rel="import" href="/styles/custom-theme.css" type="css">
+	<template>
+    <div class="page-container">
+    <!--<style include="custom-styles"></style>-->
+    <span class="page-title">Part II</span>
+    <hr class="hr"/>
+    <span class="section-title">Other Significant Conditions Contributing to Death</span>
+    <span class="section-paragraph">
+<p>
+All other important diseases or conditions that were present at the time of death and may have contributed to death, but were not listed in the chain of events in Part I or did not lead to the underlying cause of death reported in Part I, should be recorded in <b>Part II</b>. More than one condition can be reported in Part II, a facsimile of which is shown below. 
+</p>
+<br/>
+      <p>
+        <img class="container" src="/images/Part2.png" on-click="openDialog"/>
+      </p>
+      <simple-overlay id="backdrop-p2" with-backdrop>
+        <img style="width:100%" src="/images/Part2.png"/>
+      </simple-overlay>
+<br/>
+<p>
+Multiple conditions and multiple sequences of conditions resulting in death are common, particularly among older adults. When there are two or more possible sequences resulting in death, or if two conditions seem to have added together, report the sequence thought to have had the greatest impact on death in Part I. Report the other conditions in Part II.</p>
+
+<p>
+For example, in the case of a diabetic male with chronic ischemic heart disease who dies from pneumonia, his certifying physician must choose the sequence of conditions that had the greatest impact and report this sequence in Part I. One possible sequence that the certifier might report would be pneumonia due to diabetes mellitus in Part I with chronic ischemic heart disease reported in Part II. Another possibility would be pneumonia due to the chronic ischemic heart disease entered in Part I with diabetes mellitus reported in Part II. Or the certifier might consider the pneumonia to be due to the ischemic heart disease that was due to the diabetes mellitus and report this entire sequence in Part I. Because these three possibilities would be coded very differently, it is important for the certifying physician to decide which sequence most accurately describes the conditions causing death.</p>
+    </span>
+</div>
+	</template>
+</dom-module>
+<script>
+//console.log("part 2");
+Polymer({
+	is:"hbcod-part2",
+ openDialog: function(){
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+    }
+    else{
+        var dialog = document.getElementById("backdrop-p2");
+        if (dialog) {
+          dialog.open();
+        }
+    }
+  },
+	properties: {
+      selected: {
+          type: String,
+          value: 0
+        }
+  }
+
+});
+
+</script>

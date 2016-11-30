@@ -1,0 +1,63 @@
+<dom-module id="hbcod-mannerofdeath">
+<link rel="import" href="/styles/custom.css" type="css">
+<link rel="import" href="/styles/custom-theme.css" type="css">
+<link rel="import" href="/src/simple-overlay.html">
+	<template>
+    <div class="page-container">
+    <!--<style include="custom-styles"></style>-->
+    <span class="page-title">Manner of Death</span>
+    <hr class="hr"/>
+    <!-- <span class="section-title">Welcome!</span> -->
+    <span class="section-paragraph">
+    <br/>
+    <p>
+        <img id="imgM" class="container" src="/images/MOD.png" on-click="openDialog" on-load="onLoaded"/>
+    </p>
+    <br/>
+
+      <p>
+      	Always check a response for manner of death. In most cases, the manner of death will be checked "Natural." In those cases when an accident, suicide, or homicide has occurred, the medical examiner or coroner must be notified. If the medical examiner or coroner does not assume jurisdiction, the physician should check the appropriate manner of death and describe the injury or poisoning. Indicate “Pending Investigation” if the manner of death cannot be determined within the statutory time limit for filing the death certificate. This response should be changed to one of the other terms later. Indicate “Could not be determined” only when it is impossible to determine the manner of death. Manner of death is important in determining accurate causes of death, processing insurance claims, and conducting statistical studies of injuries and death.
+      </p>
+    </span>
+
+    <simple-overlay id="backdropM" with-backdrop>
+        <img style="width:100%" src="/images/MOD.png"/>
+    </simple-overlay>
+
+</div>
+
+	</template>
+<script>
+Polymer({
+    is:"hbcod-mannerofdeath",
+    openDialog: function(){
+
+        
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+    }
+    else{
+
+        var dialog = this.$.backdropM;
+            
+        if (dialog) {
+          dialog.open();
+        }
+    }
+    },
+    onLoaded: function() {
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+        this.$.imgM.style.width='100%';
+      }
+      else
+      {
+        this.$.imgM.style.width="auto";
+      }
+    }
+
+});
+
+</script>
+
+</dom-module>

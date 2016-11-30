@@ -1,0 +1,78 @@
+<dom-module id="hbcod-certifyingdeath">
+   <link rel="import" href="/styles/custom-theme.css" type="css">
+   <link rel="import" href="/styles/custom.css" type="css">
+   <link rel="import" href="/src/simple-overlay.html">
+	<template>
+		<div class="page-container">
+		<!--<style include="custom-styles"></style>-->
+		<span class="page-title">Certifying Cause of Death</span>
+		<hr class="hr"/>
+		<span class="section-title">Overview</span>
+		<span class="section-paragraph">
+			<p>The cause of death section must be completed by either the attending physician, the medical examiner, or the coroner. This section, a facsimile of which is shown below, follows guidelines recommended by the World Health Organization. As can be seen, the cause of death section consists of two major parts: <b>the direct causes of death (Part I)</b> and <b>other significant conditions contributing to death (Part II)</b>. An important feature is the reported <b>underlying cause of death (lowest line used in Part 1)</b> determined by the certifying physician and defined as:
+			</p>
+			<ul>
+				<li>the disease or injury that initiated the train of morbid events leading directly to death or</li>
+				<li>the circumstances of the accident or violence that produced the fatal injury.</li>
+			</ul>
+			<p>
+				Part I also provides for reporting the entire sequence of events leading to death (other lines used in Part I). In addition to Parts I and II, there are questions regarding autopsy, tobacco use, pregnancy, and manner of death in the cause of death section.
+			</p>
+			<br/>
+			<p>
+				<img class="container" src="/images/CauseofDeathSection.png" on-click="openDialog"/>
+			</p>
+			<simple-overlay id="backdrop" with-backdrop>
+				<img style="width:100%" src="/images/CauseofDeathSection.png"/>
+			</simple-overlay>
+<!-- 			<p>
+				<img class="container" src="/images/fig_page_17.png" on-click="openDialog1"/>
+			</p>
+			<simple-overlay on-iron-overlay-opened="patchOverlay" id="backdrop1" with-backdrop>
+				<img style="width:100%" src="/images/fig_page_17.png"/>
+			</simple-overlay> -->
+
+			<br/>
+			<p>
+				The cause of death section is designed to elicit the opinion of the medical certifier. Causes of death on the death certificate represent a medical opinion that might vary among individual physicians. Regardless, a properly completed cause of death section provides an etiologic explanation of the type, order, and association of events resulting in death.
+			</p>
+
+			<p>
+				In certifying the cause of death, any disease, abnormality, injury, or poisoning, if believed to have adversely affected the decedent, should be reported. If the use of alcohol and/or other substance, smoking history, a recent pregnancy, surgery, or injury was believed to have contributed to death, then these conditions should be reported. The conditions present at the time of death may be causally related to each other, that is, one condition may lead to another, which in turn leads to a third condition, and so forth. Death may also result from the combined effect of two or more independent or completely unrelated conditions.
+			</p>
+			
+			<p>
+				The reported cause of death should include information provided by the pathologist if an autopsy or other type of postmortem examination is done. For deaths that have microscopic examinations pending at the time the certificate is filed, the additional information should be reported as soon as it is available. If the physician has any questions about this procedure, he or she should contact his or her state registrar.
+			</p>
+			<p>
+				In the sections that follow, more detailed instructions are given on how to complete Parts I and II, as well as the rest of the cause of death section. Some common problems are also discussed. Additionally, a number of case histories and examples of properly completed certificates are provided to illustrate how cause of death should be reported. 
+			</p>
+
+		</span>
+
+		</div>
+
+	</template>
+
+	<script>
+Polymer({
+	is:"hbcod-certifyingdeath",
+	openDialog: function(){
+		
+
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+	}
+	else{
+			
+	        var dialog = this.$.backdrop;
+	        if (dialog) {
+	          dialog.open();
+	        }
+	    }
+	},
+
+});
+
+</script>
+</dom-module>

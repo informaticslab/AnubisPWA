@@ -1,0 +1,215 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-scrollpos-control/app-scrollpos-control.html">
+
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+
+
+
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../bower_components/paper-menu/paper-submenu.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+
+<!-- Neon elements -->
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animatable.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+
+<link rel="import" href="hbcod-menumain.html">
+<link rel="import" href="my-icons.html">
+
+<dom-module id="my-app">
+
+<link rel="import" href="../styles/custom-theme.css" type="css">
+<link rel="import" href="../styles/custom.css" type="css">
+
+
+  <template>
+    <style include="iron-flex iron-flex-alignment"></style>
+    <style>
+      :host {
+        --app-primary-color: #4285f4;
+        --app-secondary-color: black;
+
+        display: block;
+      }
+
+      app-header {
+        color: #fff;
+        background-color: var(--app-primary-color);
+      }
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: white;
+      }
+
+      app-drawer-layout{
+        margin: 0;
+        font-family: 'Roboto', 'Noto', sans-serif;
+      }
+      .drawer-list {
+        margin: 0 20px;
+      }
+
+      .drawer-list a {
+        display: block;
+
+        padding: 0 16px;
+
+        text-decoration: none;
+
+        color: var(--app-secondary-color);
+
+        line-height: 40px;
+      }
+
+      .drawer-list a.iron-selected {
+        color: black;
+
+        font-weight: bold;
+      }
+    </style>
+
+    <app-location route="{{route}}"></app-location>
+    <app-route
+        route="{{route}}"
+        pattern="/:page"
+        data="{{routeData}}"
+        tail="{{subroute}}"></app-route>
+        <app-scrollpos-control reset selected="{{page}}"></app-scrollpos-control>
+
+        <app-drawer-layout id="adl" fullbleed>
+<app-header-layout has-scrolling-region fullbleed>
+  <app-header fixed condenses>
+    <app-toolbar id="mainToolbar">
+      <paper-icon-button icon="menu" drawer-toggle on-tap="openDrawer"></paper-icon-button>
+      <div main-title>SAFER - HEALTHIER - PEOPLE</div>
+    </app-toolbar>
+  </app-header>
+
+  <neon-animated-pages id="pages" class="flex" selected="{{page}}" attr-for-selected="name" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
+    <hbcod-pronouncingdeath name="pronouncingdeath"></hbcod-pronouncingdeath>
+    <hbcod-introduction name="introduction"></hbcod-introduction>
+    <hbcod-medicalcertification name="medicalcertification"></hbcod-medicalcertification>
+    <hbcod-generalinstructions name="generalinstructions"></hbcod-generalinstructions>
+    <hbcod-certifyingdeath name="certifyingdeath"></hbcod-certifyingdeath>
+    <hbcod-part1 name="part1"></hbcod-part1>
+    <hbcod-part2 name="part2"></hbcod-part2>
+    <hbcod-uncertainty name="uncertainty"></hbcod-uncertainty>
+    <hbcod-advancedage name="advancedage"></hbcod-advancedage>
+    <hbcod-infants name="infants"></hbcod-infants>
+    <hbcod-avoidingambiguity name="avoidingambiguity"></hbcod-avoidingambiguity>
+    <hbcod-unnaturalcauses name="unnaturalcauses"></hbcod-unnaturalcauses>
+    <hbcod-autopsy name="autopsy"></hbcod-autopsy>
+    <hbcod-tobacco name="tobacco"></hbcod-tobacco>
+    <hbcod-pregnancy name="pregnancy"></hbcod-pregnancy>
+    <hbcod-mannerofdeath name="mannerofdeath"></hbcod-mannerofdeath>
+    <hbcod-causeofdeath name="causeofdeath"></hbcod-causeofdeath>
+    <hbcod-resources name="resources"></hbcod-resources>
+    <hbcod-about name="about"></hbcod-about>
+    <hbcod-welcome name="welcome"></hbcod-welcome>
+
+    <hbcod-example1 name="example1"></hbcod-example1>
+    <hbcod-example2 name="example2"></hbcod-example2>
+    <hbcod-example3 name="example3"></hbcod-example3>
+    <hbcod-example4 name="example4"></hbcod-example4>
+    <hbcod-example5 name="example5"></hbcod-example5>
+    <hbcod-example6 name="example6"></hbcod-example6>
+    <hbcod-example7 name="example7"></hbcod-example7>
+    <hbcod-example8 name="example8"></hbcod-example8>
+    <hbcod-example9 name="example9"></hbcod-example9>
+    <hbcod-example10 name="example10"></hbcod-example10>
+    <hbcod-example11 name="example11"></hbcod-example11>
+    <hbcod-example12 name="example12"></hbcod-example12>
+    <hbcod-example13 name="example13"></hbcod-example13>
+  </neon-animated-pages>
+</app-header-layout>
+
+<app-drawer id="mainDrawer">
+ 
+<app-header-layout has-scrolling-region style="z-index:0">
+  <app-header fixed condenses effects="waterfall">
+    <app-toolbar id="drawerToolbar">
+
+    </app-toolbar>
+  </app-header>
+  <div>
+      <hbcod-menumain menu-selected="{{page}}"></hbcod-menumain>
+  </div>
+</app-header-layout>
+</app-drawer>
+
+</app-drawer-layout>
+
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-app',
+
+      properties: {
+        page: {
+          type: String,
+          reflectToAttribute: true,
+          observer: '_pageChanged',
+          value:"welcome"
+        },
+      },
+      //  observers: [
+      //   '_routePageChanged(routeData.page)'
+      // ],
+
+      _routePageChanged: function(page) {
+        this.page = page || 'welcome';
+      },
+
+      _pageChanged: function(page) {
+        console.log("page changed", page);
+        if(page)
+        {
+          // Load page import on demand. Show 404 page if fails
+          var resolvedPageUrl = this.resolveUrl('hbcod-' + page + '.html');
+
+          console.log(resolvedPageUrl);
+          this.importHref(resolvedPageUrl, null, this._showPage404, true);
+          this.pageURL=page;
+          if(this.$.adl.narrow)
+          {
+            this.$.mainDrawer.close();
+          }
+        }
+      },
+      _showPage404: function() {
+        this.page = 'welcome';
+      },
+      openDrawer: function() {
+        //this.$.mainDrawer.open();
+
+      }
+
+    });
+  </script>
+</dom-module>

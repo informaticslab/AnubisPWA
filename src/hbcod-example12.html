@@ -1,0 +1,54 @@
+<!-- <link rel="import" href="/styles/custom-theme.html"> -->
+<dom-module id="hbcod-example12">
+<link rel="import" href="/styles/custom-theme.css" type="css">
+<link rel="import" href="/styles/custom.css" type="css">
+<link rel="import" href="/src/simple-overlay.html">
+	<template>
+				<div class="page-container">
+		<!--<style include="custom-styles"></style>-->
+		<span class="page-title">92-year-old Male Found Dead</span>
+		<hr class="hr"/>
+		<!-- <span class="section-title">92-year-old Male Found Dead</span> -->
+		<span class="section-paragraph">
+<p>A 92-year-old male was found dead in bed. He had no significant medical history. Autopsy disclosed minimal coronary disease and generalized atrophic changes commonly associated with aging. No specific cause of death was identified. Toxicology was negative. 
+</p>
+<br/>
+    <p>
+        <img class="container" src="/images/Example 12.png" on-click="openDialog"/>
+    </p>
+    <simple-overlay id="backdropE12" with-backdrop>
+        <img style="width:100%" src="/images/Example 12.png"/>
+    </simple-overlay>
+<p>
+<i>
+Notes:<br/>
+In some cases, no compelling cause of death presents itself. It is acceptable to indicate that a thorough investigation was performed, but that no cause could be determined.
+</i>
+</p>
+		</span>
+
+</div>
+	</template>
+
+<script>
+Polymer({
+    is:"hbcod-example12",
+    openDialog: function(){
+
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+    }
+    else{
+
+            var dialog = this.$.backdropE12;
+            if (dialog) {
+              dialog.open();
+            }
+        }
+    },
+
+});
+
+</script>
+</dom-module>

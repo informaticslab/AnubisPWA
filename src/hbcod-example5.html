@@ -1,0 +1,54 @@
+<!-- <link rel="import" href="/styles/custom-theme.html"> -->
+<dom-module id="hbcod-example5">
+<link rel="import" href="/styles/custom-theme.css" type="css">
+<link rel="import" href="/styles/custom.css" type="css">
+<link rel="import" href="/src/simple-overlay.html">
+	<template>
+				<div class="page-container">
+		<!--<style include="custom-styles"></style>-->
+		<span class="page-title">78-year-old Female with Temperature of 102.6 F</span>
+		<hr class="hr"/>
+		<!-- <span class="section-title">78-year-old Female with Temperature of 102.6 F</span> -->
+		<span class="section-paragraph">
+<p>
+A 78-year-old female with a temperature of 102.6° F was admitted to the hospital from a nursing home. She first became a resident of the nursing home 2 years earlier following a cerebrovascular accident, which left her with a residual left hemiparesis. Over the next year, she became increasingly dependent on others to help with her activities of daily living, eventually requiring an in-dwelling bladder catheter 6 months before the current admission. For the 3 days prior to admission, she was noted to have lost her appetite and to have become increasingly withdrawn. On admission to the hospital her leukocyte count was 19,700, she had pyuria, and gram-negative rods were seen on a gram stain of urine. Ampicillin and gentamicin were administered intravenously. On the third hospital day, admission blood cultures turned positive for Pseudomonas aeruginosa, which was resistant to ampicillin and gentamicin. Antibiotic therapy was changed to ticarcillin clavulanate, to which the organism was sensitive. Despite the antibiotics and intravenous fluid support, the patient’s fever persisted. On the fourth hospital day, she became hypotensive and died.
+</p>
+<br/>
+    <p>
+        <img class="container" src="/images/Example 5.png" on-click="openDialog"/>
+    </p>
+    <simple-overlay id="backdropE5" with-backdrop>
+        <img style="width:100%" src="/images/Example 5.png"/>
+    </simple-overlay>
+
+<p>
+<i>
+Notes on death certification:<br/>
+This case illustrates that additional lines may be added to Part I.
+</p>
+		</span>
+
+</div>
+	</template>
+<script>
+Polymer({
+    is:"hbcod-example5",
+    openDialog: function(){
+
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+    }
+    else{
+
+            var dialog = this.$.backdropE5;
+            if (dialog) {
+              dialog.open();
+            }
+        }
+    },
+
+});
+
+</script>
+</dom-module>

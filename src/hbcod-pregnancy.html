@@ -1,0 +1,61 @@
+<dom-module id="hbcod-pregnancy">
+<link rel="import" href="/styles/custom.css" type="css">
+<link rel="import" href="/styles/custom-theme.css" type="css">
+<link rel="import" href="/src/simple-overlay.html">
+	<template>
+    <div class="page-container">
+    <!--<style include="custom-styles"></style>-->
+    <span class="page-title">Pregnancy</span>
+    <hr class="hr"/>
+    <!-- <span class="section-title">Welcome!</span> -->
+    <span class="section-paragraph">
+    <br/>
+    <p>
+        <img id="imgP" class="container" src="/images/Pregnancy.png" on-click="openDialog" on-load="onLoaded"/>
+    </p>
+    <br/>
+      <p>
+      	If the decedent was female, indicate whether she was pregnant at the time of death or within 1 year prior to death.  This information is important in determining pregnancy-related mortality.
+      </p>
+    </span>
+
+    <simple-overlay id="backdropP" with-backdrop>
+        <img style="width:100%" src="/images/Pregnancy.png"/>
+    </simple-overlay>
+
+</div>
+
+	</template>
+<script>
+Polymer({
+    is:"hbcod-pregnancy",
+    openDialog: function(){
+
+        
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+    }
+    else{
+
+        var dialog = this.$.backdropP;
+            
+        if (dialog) {
+          dialog.open();
+        }
+    }
+    },
+    onLoaded: function() {
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+        this.$.imgP.style.width='100%';
+      }
+      else
+      {
+        this.$.imgP.style.width="auto";
+      }
+    }
+
+});
+
+</script>
+</dom-module>

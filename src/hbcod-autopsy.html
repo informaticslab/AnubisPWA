@@ -1,0 +1,65 @@
+<dom-module id="hbcod-autopsy">
+<link rel="import" href="/styles/custom.css" type="css">
+<link rel="import" href="/styles/custom-theme.css" type="css">
+<link rel="import" href="/src/simple-overlay.html">
+<template>
+
+    <div class="page-container">
+        <!--<style include="custom-styles"></style>-->
+        <span class="page-title">Autopsy</span>
+        <hr class="hr"/>
+
+        <!-- <span class="section-title">Welcome!</span> -->
+        <span class="section-paragraph">
+        <br/>
+        <p>
+            <img id="imgA" class="container" src="/images/Autopsy.png" on-click="openDialog" on-load="onLoaded"/>
+        </p>
+        <br/>
+    	<p>It should be indicated whether an autopsy was performed and whether the findings were available to complete the cause of death section. </p>
+    	<p>Check “Yes” if either a partial or full autopsy was performed.  Otherwise, check “No.”</p>
+    	<p>Check “Yes” if autopsy findings were available to complete the cause of death section; otherwise, check “No.” Leave this item blank if no autopsy was performed.</p>
+
+        </span>
+
+        <simple-overlay id="backdropA" with-backdrop>
+            <img style="width:100%" src="/images/Autopsy.png"/>
+        </simple-overlay>
+    </div>
+
+</template>
+
+<script>
+Polymer({
+    is:"hbcod-autopsy",
+    openDialog: function(){
+
+        
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+    }
+    else{
+
+        var dialog = this.$.backdropA;
+            
+        if (dialog) {
+          dialog.open();
+        }
+    }
+    },
+    onLoaded: function() {
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+        this.$.imgA.style.width='100%';
+      }
+      else
+      {
+        this.$.imgA.style.width="auto";
+      }
+    }
+
+});
+
+</script>
+</dom-module>
+

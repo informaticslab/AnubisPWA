@@ -1,0 +1,69 @@
+<dom-module id="hbcod-medicalcertification">
+   <link rel="import" href="/styles/custom-theme.css" type="css">
+   <link rel="import" href="/styles/custom.css" type="css">
+	<template>
+		<div class="page-container">
+		<!--<style include="custom-styles"></style>-->
+		<span class="page-title">Medical Certification of Death</span>
+		<hr class="hr"/>
+		<!-- <span class="section-title">Medical Certification of Death</span> -->
+		<span class="section-paragraph">
+			<p>The physician’s principal responsibility in death registration is to complete the medical part of the death certificate. The medical part of the death certificate includes two major subsections: the <b>pronouncement of death</b> and the <b>certification of the cause of death.</b>
+			</p>
+			<br/>
+			<p>
+				The pronouncement of death consists of:
+			</p>
+			<ul>
+			<li>the date and time pronounced dead,</li>
+			<li>the pronouncing physician’s information and signature, if applicable,</li>
+			<li>the date and time of death, and</li>
+			<li>whether the case was referred to the medical examiner or coroner.</li>
+			</ul>
+			<br/>
+			<p>
+				The certification of the cause of death consists of:
+			</p>
+			<ul>
+			<li>the direct causes of death or sequence leading to death;</li>
+			<li>other significant conditions contributing to death;</li>
+			<li>autopsy information;</li>
+			<li>contribution of tobacco use;</li>
+			<li>if female, pregnancy status;</li>
+			<li>manner of death;</li>
+			<li>if involving an injury,</li>
+				<ul>
+					<li>the date and time of the injury,</li>
+					<li>where the injury occurred, and</li>
+					<li>how the injury occurred; and</li>
+				</ul>
+			<li>the certifier’s information and signature.</li>
+			</ul>
+			<br/>
+			<p>
+				In most cases, an attending physician will both pronounce the death and certify the cause of death. When the attending physician is unavailable to certify the cause of death at the time of death, and if state law provides for this option, another physician may certify the cause of death. If an inquiry is required by a State Post-Mortem Examinations Act, a medical examiner or coroner is responsible for determining the cause of death.
+			</p>
+		</span>
+
+		</div>
+
+	</template>
+</dom-module>
+<script>
+Polymer({
+	is:"hbcod-medicalcertification",
+	openDialog: function(){
+        var dialog = document.getElementById("backdrop");
+        if (dialog) {
+          dialog.open();
+        }
+	},
+	patchOverlay: function (e) {
+  		if (e.target.withBackdrop) {
+    	e.target.parentNode.insertBefore(e.target._backdrop, e.target);
+  }
+},
+
+});
+
+</script>
