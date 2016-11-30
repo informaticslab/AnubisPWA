@@ -1,7 +1,7 @@
 {
-  "name": "polymer-starter-kit",
+  "name": "anubis",
   "authors": [
-    "The Polymer Authors"
+    "Informatics Innovation Unit Lab"
   ],
   "private": true,
   "dependencies": {
