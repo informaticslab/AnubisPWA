@@ -1,15 +1,15 @@
 <dom-module id="hbcod-autopsy">
-<link rel="import" href="/styles/custom.css" type="css">
-<link rel="import" href="/styles/custom-theme.css" type="css">
-<template>
+    <link rel="import" href="/styles/custom.css" type="css">
+    <link rel="import" href="/styles/custom-theme.css" type="css">
+    <template>
 
-    <div class="page-container">
-        <!--<style include="custom-styles"></style>-->
-        <span class="page-title">Autopsy</span>
-        <hr class="hr"/>
+        <div class="page-container">
+            <!--<style include="custom-styles"></style>-->
+            <span class="page-title">Autopsy</span>
+            <hr class="hr" />
 
-        <!-- <span class="section-title">Welcome!</span> -->
-        <span class="section-paragraph">
+            <!-- <span class="section-title">Welcome!</span> -->
+            <span class="section-paragraph">
         <br/>
         <p>
             <img id="imgA" class="container" src="/images/Autopsy.png" on-click="openDialog" on-load="onLoaded"/>
@@ -21,14 +21,14 @@
 
         </span>
 
-        <simple-overlay id="backdropA" with-backdrop>
-            <img style="width:100%" src="/images/Autopsy.png"/>
-        </simple-overlay>
-    </div>
+            <simple-overlay id="backdropA" with-backdrop>
+                <img style="width:100%" src="/images/Autopsy.png" />
+            </simple-overlay>
+        </div>
 
-</template>
+    </template>
 
-<script>
+    <script>
 Polymer({
     is:"hbcod-autopsy",
     openDialog: function(){
@@ -61,4 +61,3 @@ Polymer({
 
 </script>
 </dom-module>
-

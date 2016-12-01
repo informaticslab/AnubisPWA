@@ -1,54 +1,51 @@
 <dom-module id="hbcod-menumain">
-<link rel="import" href="../styles/custom-theme.css" type="css">
-<link rel="import" href="../styles/custom.css" type="css">
+  <link rel="import" href="../styles/custom-theme.css" type="css">
+  <link rel="import" href="../styles/custom.css" type="css">
 
   <template>
     <style include="iron-flex iron-flex-alignment"></style>
-  <style>
-    paper-menu[id^="menu2"] paper-item {
-      padding-left: 30px;
-      font-size: 14px;
-      padding-bottom: 10px;
-      padding-top: 10px;
-    }
-    paper-menu[id^="menu3"] paper-item {
-      padding-left: 60px;
-      padding-bottom: 10px;
-      padding-top: 10px;
-    }
-
-    paper-item>span{
-      cursor: default;
-    }
-
-    paper-item{
-      cursor: pointer;
-    }
-
-    paper-item.menu-trigger{
-      cursor: default;
-    }
-
-
-    paper-menu {
-      --paper-menu-focused-item-after: {
+    <style>
+      paper-menu[id^="menu2"] paper-item {
+        padding-left: 30px;
+        font-size: 14px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+      
+      paper-menu[id^="menu3"] paper-item {
+        padding-left: 60px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+      
+      paper-item>span {
+        cursor: default;
+      }
+      
+      paper-item {
+        cursor: pointer;
+      }
+      
+      paper-item.menu-trigger {
+        cursor: default;
+      }
+      
+      paper-menu {
+        --paper-menu-focused-item-after: {
+          background-color: rgb(250, 250, 250);
+          opacity: 0;
+        }        ;
+      }
+      
+      .paper-item-0:focus:before {
         background-color: rgb(250, 250, 250);
         opacity: 0;
-      };
-
-    }
-
-    .paper-item-0:focus:before {
-      background-color: rgb(250, 250, 250);
-      opacity: 0;
-    }
-
-
-  </style>
-  <paper-menu id="menu11" attr-for-selected="proute" selected="{{pageSelected1}}" >
-    <paper-item proute="introduction">Introduction</paper-item>
-    <hr class="hr-menu">
-<!--     <paper-submenu>
+      }
+    </style>
+    <paper-menu id="menu11" attr-for-selected="proute" selected="{{pageSelected1}}">
+      <paper-item proute="introduction">Introduction</paper-item>
+      <hr class="hr-menu">
+      <!--     <paper-submenu>
       <paper-item class="menu-trigger">
           <span class="flex">Introduction</span>
           <iron-icon icon="expand-more"></iron-icon>
@@ -58,88 +55,88 @@
         <paper-item proute="importance">Importance</paper-item>
       </paper-menu>
     </paper-submenu> -->
-    <paper-submenu>
-      <paper-item class="menu-trigger">
+      <paper-submenu>
+        <paper-item class="menu-trigger">
           <span class="flex">Guidelines</span>
           <iron-icon icon="expand-more"></iron-icon>
-      </paper-item>
-      <paper-menu class="menu-content sublist" id="menu22"  attr-for-selected="proute" selected="{{pageSelected22}}">
-        <paper-item proute="generalinstructions">General Instructions</paper-item>
-        <paper-item proute="medicalcertification">Medical Certification of Death</paper-item>
-      </paper-menu>
-    </paper-submenu>
-    <hr class="hr-menu">
-    <paper-item proute="pronouncingdeath">Pronouncing Death</paper-item>
-    <hr class="hr-menu">
-    <paper-item proute="certifyingdeath">Certifying Cause of Death</paper-item>
-    <hr class="hr-menu">
-    <paper-submenu>
-      <paper-item class="menu-trigger">
+        </paper-item>
+        <paper-menu class="menu-content sublist" id="menu22" attr-for-selected="proute" selected="{{pageSelected22}}">
+          <paper-item proute="generalinstructions">General Instructions</paper-item>
+          <paper-item proute="medicalcertification">Medical Certification of Death</paper-item>
+        </paper-menu>
+      </paper-submenu>
+      <hr class="hr-menu">
+      <paper-item proute="pronouncingdeath">Pronouncing Death</paper-item>
+      <hr class="hr-menu">
+      <paper-item proute="certifyingdeath">Certifying Cause of Death</paper-item>
+      <hr class="hr-menu">
+      <paper-submenu>
+        <paper-item class="menu-trigger">
           <span class="flex">Completing Parts I and II</span>
           <iron-icon icon="expand-more"></iron-icon>
-      </paper-item>
-      <paper-menu class="menu-content sublist" id="menu23"  attr-for-selected="proute" selected="{{pageSelected23}}">
-        <paper-item proute="part1">Part I</paper-item>
-        <paper-item proute="part2">Part II</paper-item>
-      </paper-menu>
-    </paper-submenu>
-    <hr class="hr-menu">
-    <paper-submenu>
-      <paper-item class="menu-trigger">
+        </paper-item>
+        <paper-menu class="menu-content sublist" id="menu23" attr-for-selected="proute" selected="{{pageSelected23}}">
+          <paper-item proute="part1">Part I</paper-item>
+          <paper-item proute="part2">Part II</paper-item>
+        </paper-menu>
+      </paper-submenu>
+      <hr class="hr-menu">
+      <paper-submenu>
+        <paper-item class="menu-trigger">
           <span class="flex">Common Problems</span>
           <iron-icon icon="expand-more"></iron-icon>
-      </paper-item>
-      <paper-menu class="menu-content sublist" id="menu24"  attr-for-selected="proute" selected="{{pageSelected24}}">
-        <paper-item proute="uncertainty">Uncertainty</paper-item>
-        <paper-item proute="advancedage">Advanced Age</paper-item>
-        <paper-item proute="infants">Infants</paper-item>
-        <paper-item proute="avoidingambiguity">Ambiguity</paper-item>
-        <paper-item proute="unnaturalcauses">Potentially Unnatural Causes</paper-item>
-      </paper-menu>
-    </paper-submenu>
-    <hr class="hr-menu">
-    <paper-submenu>
-      <paper-item class="menu-trigger">
+        </paper-item>
+        <paper-menu class="menu-content sublist" id="menu24" attr-for-selected="proute" selected="{{pageSelected24}}">
+          <paper-item proute="uncertainty">Uncertainty</paper-item>
+          <paper-item proute="advancedage">Advanced Age</paper-item>
+          <paper-item proute="infants">Infants</paper-item>
+          <paper-item proute="avoidingambiguity">Ambiguity</paper-item>
+          <paper-item proute="unnaturalcauses">Potentially Unnatural Causes</paper-item>
+        </paper-menu>
+      </paper-submenu>
+      <hr class="hr-menu">
+      <paper-submenu>
+        <paper-item class="menu-trigger">
           <span class="flex">Other Parts of the Certification</span>
           <iron-icon icon="expand-more"></iron-icon>
-      </paper-item>
-      <paper-menu class="menu-content sublist" id="menu25"  attr-for-selected="proute" selected="{{pageSelected25}}">
-        <paper-item proute="autopsy">Autopsy</paper-item>
-        <paper-item proute="tobacco">Tobacco Use</paper-item>
-        <paper-item proute="pregnancy">Pregnancy</paper-item>
-        <paper-item proute="mannerofdeath">Manner of Death</paper-item>
-        <!-- <paper-item proute="riop">Injury or Poisoning</paper-item> -->
-      </paper-menu>
-    </paper-submenu>
-    <hr class="hr-menu">
-    <paper-item proute="causeofdeath">Changes to Cause of Death</paper-item>
-    <hr class="hr-menu">
-    <paper-submenu>
-      <paper-item class="menu-trigger">
+        </paper-item>
+        <paper-menu class="menu-content sublist" id="menu25" attr-for-selected="proute" selected="{{pageSelected25}}">
+          <paper-item proute="autopsy">Autopsy</paper-item>
+          <paper-item proute="tobacco">Tobacco Use</paper-item>
+          <paper-item proute="pregnancy">Pregnancy</paper-item>
+          <paper-item proute="mannerofdeath">Manner of Death</paper-item>
+          <!-- <paper-item proute="riop">Injury or Poisoning</paper-item> -->
+        </paper-menu>
+      </paper-submenu>
+      <hr class="hr-menu">
+      <paper-item proute="causeofdeath">Changes to Cause of Death</paper-item>
+      <hr class="hr-menu">
+      <paper-submenu>
+        <paper-item class="menu-trigger">
           <span class="flex">Examples</span>
           <iron-icon icon="expand-more"></iron-icon>
-      </paper-item>
-      <paper-menu class="menu-content sublist" id="menu26"  attr-for-selected="proute" selected="{{pageSelected26}}">
-        <paper-item proute="example1">48-year-old Male with Cramping</paper-item>
-        <paper-item proute="example2">68-year-old Male with Progressive Lower Quadrant Pain</paper-item>
-        <paper-item proute="example3">75-year-old Male Complaining of Severe Chest Pain</paper-item>
-        <paper-item proute="example4">68-year-old Female with Dyspnea and Moderate Retrosternal Pain</paper-item>
-        <paper-item proute="example5">78-year-old Female with Temperature of 102.6 F</paper-item>
-        <paper-item proute="example6">34-year-old Male with Severe Shortness of Breath</paper-item>
-        <paper-item proute="example7">75-year-old Male with History of Chronic Bronchitis</paper-item>
-        <paper-item proute="example8">75-year-old Female with History of Diabetes Mellitus, Hypertension, and Myocardial Infarction</paper-item>
-        <paper-item proute="example9">53-year-old Male with Intermittent Midepigastric and Left-sided Chest Pain</paper-item>
-        <paper-item proute="example10">1,480-gram Male Infant Born at 32 Weeks Gestation to a 20-year-old Primiparous Woman</paper-item>
-        <paper-item proute="example11">30-year-old Gravida-six, Para-five, with a History of Gestational Hypertension</paper-item>
-        <paper-item proute="example12">92-year-old Male Found Dead</paper-item>
-        <paper-item proute="example13">102-year-old Female with Sudden Onset of Speech Abnormality</paper-item>
-      </paper-menu>
-    </paper-submenu>
-    <hr class="hr-menu">
-    <paper-item proute="resources">Additional Resources</paper-item>
-    <hr class="hr-menu">        
+        </paper-item>
+        <paper-menu class="menu-content sublist" id="menu26" attr-for-selected="proute" selected="{{pageSelected26}}">
+          <paper-item proute="example1">48-year-old Male with Cramping</paper-item>
+          <paper-item proute="example2">68-year-old Male with Progressive Lower Quadrant Pain</paper-item>
+          <paper-item proute="example3">75-year-old Male Complaining of Severe Chest Pain</paper-item>
+          <paper-item proute="example4">68-year-old Female with Dyspnea and Moderate Retrosternal Pain</paper-item>
+          <paper-item proute="example5">78-year-old Female with Temperature of 102.6 F</paper-item>
+          <paper-item proute="example6">34-year-old Male with Severe Shortness of Breath</paper-item>
+          <paper-item proute="example7">75-year-old Male with History of Chronic Bronchitis</paper-item>
+          <paper-item proute="example8">75-year-old Female with History of Diabetes Mellitus, Hypertension, and Myocardial Infarction</paper-item>
+          <paper-item proute="example9">53-year-old Male with Intermittent Midepigastric and Left-sided Chest Pain</paper-item>
+          <paper-item proute="example10">1,480-gram Male Infant Born at 32 Weeks Gestation to a 20-year-old Primiparous Woman</paper-item>
+          <paper-item proute="example11">30-year-old Gravida-six, Para-five, with a History of Gestational Hypertension</paper-item>
+          <paper-item proute="example12">92-year-old Male Found Dead</paper-item>
+          <paper-item proute="example13">102-year-old Female with Sudden Onset of Speech Abnormality</paper-item>
+        </paper-menu>
+      </paper-submenu>
+      <hr class="hr-menu">
+      <paper-item proute="resources">Additional Resources</paper-item>
+      <hr class="hr-menu">
 
-  </paper-menu>
+    </paper-menu>
 
   </template>
 </dom-module>

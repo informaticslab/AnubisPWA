@@ -1,14 +1,14 @@
 <dom-module id="hbcod-tobacco">
-<link rel="import" href="/styles/custom.css" type="css">
-<link rel="import" href="/styles/custom-theme.css" type="css">
+  <link rel="import" href="/styles/custom.css" type="css">
+  <link rel="import" href="/styles/custom-theme.css" type="css">
 
-	<template>
+  <template>
     <div class="page-container">
-    <!--<style include="custom-styles"></style>-->
-    <span class="page-title">Tobacco Use</span>
-    <hr class="hr"/>
-    <!-- <span class="section-title">Welcome!</span> -->
-    <span class="section-paragraph">
+      <!--<style include="custom-styles"></style>-->
+      <span class="page-title">Tobacco Use</span>
+      <hr class="hr" />
+      <!-- <span class="section-title">Welcome!</span> -->
+      <span class="section-paragraph">
     <br/>
     <p>
         <img id="imgT" class="container" src="/images/Tobacco.png" on-click="openDialog" on-load="onLoaded"/>
@@ -19,13 +19,13 @@
       </p>
     </span>
 
-    <simple-overlay id="backdropT" with-backdrop>
-        <img style="width:100%" src="/images/Tobacco.png"/>
-    </simple-overlay>
-</div>
+      <simple-overlay id="backdropT" with-backdrop>
+        <img style="width:100%" src="/images/Tobacco.png" />
+      </simple-overlay>
+    </div>
 
-	</template>
-<script>
+  </template>
+  <script>
 Polymer({
     is:"hbcod-tobacco",
     openDialog: function(){

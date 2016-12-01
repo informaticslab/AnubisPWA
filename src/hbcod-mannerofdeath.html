@@ -1,14 +1,14 @@
 <dom-module id="hbcod-mannerofdeath">
-<link rel="import" href="/styles/custom.css" type="css">
-<link rel="import" href="/styles/custom-theme.css" type="css">
+  <link rel="import" href="/styles/custom.css" type="css">
+  <link rel="import" href="/styles/custom-theme.css" type="css">
 
-	<template>
+  <template>
     <div class="page-container">
-    <!--<style include="custom-styles"></style>-->
-    <span class="page-title">Manner of Death</span>
-    <hr class="hr"/>
-    <!-- <span class="section-title">Welcome!</span> -->
-    <span class="section-paragraph">
+      <!--<style include="custom-styles"></style>-->
+      <span class="page-title">Manner of Death</span>
+      <hr class="hr" />
+      <!-- <span class="section-title">Welcome!</span> -->
+      <span class="section-paragraph">
     <br/>
     <p>
         <img id="imgM" class="container" src="/images/MOD.png" on-click="openDialog" on-load="onLoaded"/>
@@ -20,14 +20,14 @@
       </p>
     </span>
 
-    <simple-overlay id="backdropM" with-backdrop>
-        <img style="width:100%" src="/images/MOD.png"/>
-    </simple-overlay>
+      <simple-overlay id="backdropM" with-backdrop>
+        <img style="width:100%" src="/images/MOD.png" />
+      </simple-overlay>
 
-</div>
+    </div>
 
-	</template>
-<script>
+  </template>
+  <script>
 Polymer({
     is:"hbcod-mannerofdeath",
     openDialog: function(){
