@@ -27,7 +27,7 @@
       <p>
         <img class="container" src="/images/Part1.png" on-click="openDialog"/>
       </p>
-      <simple-overlay id="backdrop-p1" with-backdrop>
+      <simple-overlay id="backdropP1" with-backdrop>
         <img style="width:100%" src="/images/Part1.png"/>
       </simple-overlay>
 <br/>      
@@ -206,18 +206,18 @@ These intervals usually are established by the physician on the basis of availab
     </span>
 </div>
 	</template>
-</dom-module>
-<script>
+
+  <script>
 //console.log("part 1");
 Polymer({
-	is:"hbcod-part1",
+  is:"hbcod-part1",
   openDialog: function(){
-
+      //console.log("opened");
       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
       }
       else{
-        var dialog = document.getElementById("backdrop-p1");
+        var dialog = this.$.backdropP1;
         if (dialog) {
           dialog.open();
         }
@@ -241,7 +241,7 @@ Polymer({
   openDsix: function(){
     this.$.dSix.open();
   },
-	properties: {
+  properties: {
       selected: {
           type: String,
           value: 0
@@ -251,3 +251,5 @@ Polymer({
 });
 
 </script>
+</dom-module>
+
