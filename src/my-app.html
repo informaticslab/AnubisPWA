@@ -186,7 +186,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script>
     Polymer({
       is: 'my-app',
-
+      ready: function() {
+        //this.$.moreMenu.closeOnActivate = true;
+        this.$.moreMenu.closeOnActivate=true;
+        this.$.mainDrawer.disableSwipe=true;
+      },
       properties: {
         page: {
           type: String,
