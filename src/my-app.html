@@ -28,9 +28,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../bower_components/paper-menu/paper-submenu.html">
+<link rel="import" href="../bower_components/paper-menu-button/paper-menu-button.html">
 <link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
-<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 
 
@@ -44,21 +45,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/platinum-https-redirect/platinum-https-redirect.html">
 
 <link rel="import" href="hbcod-menumain.html">
-<link rel="import" href="my-icons.html">
-   <link rel="import" href="simple-overlay.html">
+
+<link rel="import" href="simple-overlay.html">
+
+
+<!-- Should be loaded last -->
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+
 <dom-module id="my-app">
 
-<link rel="import" href="../styles/custom-theme.css" type="css">
-<link rel="import" href="../styles/custom.css" type="css">
+  <link rel="import" href="../styles/custom-theme.css" type="css">
+  <link rel="import" href="../styles/custom.css" type="css">
+
 
 
   <template>
     <style include="iron-flex iron-flex-alignment"></style>
     <style>
 
-      app-header paper-icon-button {
-        --paper-icon-button-ink-color: white;
-      }
 
       app-drawer-layout{
         margin: 0;
@@ -114,9 +118,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
   <app-header fixed condenses>
-    <app-toolbar id="mainToolbar">
+
+<!--     <app-toolbar id="mainToolbar">
       <paper-icon-button icon="menu" drawer-toggle on-tap="openDrawer"></paper-icon-button>
       <div class="flex">SAFER - HEALTHIER - PEOPLE</div>
+    </app-toolbar>
+ -->
+    <app-toolbar id="mainToolbar">
+      <paper-icon-button id="menu-icon" icon="menu" drawer-toggle on-tap="openDrawer"></paper-icon-button>
+      <div class="flex">SAFER - HEALTHIER - PEOPLE</div>
+      <paper-menu-button id="moreMenu" vertical-align="top" horizontal-align="right" >
+        <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
+        <paper-menu id="aboutmenu" class="dropdown-content" attr-for-selected="name" selected="{{page}}">
+          <paper-item name="about">
+            About&nbsp;Us
+          </paper-item>
+        </paper-menu>
+      </paper-menu-button> 
     </app-toolbar>
   </app-header>
 <div has-scrolling-region>
