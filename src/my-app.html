@@ -91,6 +91,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
+    <style is="custom-style">
+  .flex-center-justified {
+    @apply(--layout-horizontal);
+    @apply(--layout-center-justified);
+  }
+</style>
+
+
     <app-location route="{{route}}"></app-location>
     <app-route
         route="{{route}}"
@@ -126,7 +134,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
  -->
     <app-toolbar id="mainToolbar">
       <paper-icon-button id="menu-icon" icon="menu" drawer-toggle on-tap="openDrawer"></paper-icon-button>
-      <div class="flex">SAFER - HEALTHIER - PEOPLE</div>
+      <div id="title" class="flex flex-center-justified">SAFER - HEALTHIER - PEOPLE</div>
       <paper-menu-button id="moreMenu" vertical-align="top" horizontal-align="right" >
         <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
         <paper-menu id="aboutmenu" class="dropdown-content" attr-for-selected="name" selected="{{page}}">
