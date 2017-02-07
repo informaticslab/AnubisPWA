@@ -90,7 +90,8 @@
           </div>
         </app-header-layout>
       </app-drawer>
-      <app-header fixed condenses>
+      <app-header-layout has-scrolling-region>
+      <app-header fixed effects="waterfall">
         <app-toolbar id="mainToolbar">
           <paper-icon-button id="menu-icon" icon="menu" drawer-toggle ></paper-icon-button>
           <div id="title" class="flex">SAFER - HEALTHIER - PEOPLE</div>
@@ -142,6 +143,7 @@
           <hbcod-example13 name="example13"></hbcod-example13>
         </neon-animated-pages>
       </div>
+      </app-header-layout>
     </app-drawer-layout>
   </template>
 
