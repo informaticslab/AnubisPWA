@@ -34,7 +34,7 @@
 Line (a), immediate cause</b>
 </p>
 <p>
-In Part I, the immediate cause of death is reported on line (a). This is the final disease, injury, or complication directly causing the death. An immediate cause of death must always be reported on line (a). It can be the sole entry in the cause of death section if that condition is the only condition causing the death.
+In Part I, the immediate cause of death is reported on line (a). <template is="dom-if" if="{{moreC}}"><a class="more" on-click=toggleMoreC>Show More</a></template><template is="dom-if" if="{{!moreC}}"> <span> This is the final disease, injury, or complication directly causing the death. An immediate cause of death must always be reported on line (a). It can be the sole entry in the cause of death section if that condition is the only condition causing the death. <a class="more" on-click=toggleMoreC>Show Less</a></span></template>
 </p>
 
 <p>
@@ -46,10 +46,17 @@ The <i>mechanism</i> of death (e.g., cardiac or respiratory arrest) should <u>no
 </p>
 <p>
 On line (b) report the disease, condition, or complication, if any, that gave rise to the immediate cause of death reported on line (a). If this in turn resulted from a further condition, record that condition on line (c). If this in turn resulted from a further condition, record that condition on line (d). For as many conditions as are involved, write the full sequence, one condition per line, with the most recent condition at the top, and the underlying cause of death at the bottom. If more than four lines are needed, writing "due to" between conditions on the same line is the same as adding an additional line and is acceptable. Do <u>not</u> use the space in Part II to continue the sequence in Part I.
+ <template is="dom-if" if="{{moreD}}"><a class="more" on-click=toggleMoreD>Show More</a></template><template is="dom-if" if="{{!moreD}}">
 </p>
 <p>
-The words "due to (or as a consequence of)," which are printed between the lines of Part I, apply not only in sequences with an etiological or pathological basis and usually a chronological time ordering, but also to sequences in which an antecedent condition is believed to have prepared the way for a subsequent cause by damage to tissues or impairment of function.
+  If more than four lines are needed, writing "due to" between conditions on the same line is the same as adding an additional line and is acceptable. Please do <u>not</u> number the causes or use the space in Part II to continue the sequence in Part I. 
 </p>
+<p>
+The words "due to (or as a consequence of)," which are printed between the lines of Part I, apply not only in sequences with an etiological or pathological basis and usually a chronological time ordering, but also to sequences in which an antecedent condition is believed to have prepared the way for a subsequent cause by damage to tissues or impairment of function. 
+ <a class="more" on-click=toggleMoreD>Show Less</a>
+</p>
+</template>
+
 <p>
   Please click on the following conditions for specific instructions:
   <ul>
@@ -196,6 +203,12 @@ These intervals usually are established by the physician on the basis of availab
 //console.log("part 1");
 Polymer({
   is:"hbcod-part1",
+  toggleMoreC: function(){
+    this.moreC=!(this.moreC);
+    },
+  toggleMoreD: function(){
+    this.moreD=!(this.moreD);
+    },
   openDialog: function(){
       //console.log("opened");
       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -230,7 +243,17 @@ Polymer({
       selected: {
           type: String,
           value: 0
-        }
+        },
+      moreC: {
+        type: Boolean,
+        reflectToAttribute: true,
+        value: true
+      },
+      moreD: {
+        type: Boolean,
+        reflectToAttribute: true,
+        value: true
+      },
   }
 
 });
