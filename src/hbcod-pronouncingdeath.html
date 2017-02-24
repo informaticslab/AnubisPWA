@@ -9,7 +9,7 @@
 		<!-- <span class="section-title">Pronouncing Date and Time of Death</span> -->
 		<span class="section-paragraph">
 			<p>
-			The <b>date and time pronounced dead</b> must be completed by the person who pronounces death. This may be the pronouncing physician, pronouncing/certifying physician, or the medical examiner or coroner. Spell out the name of the month. Use four digits for the year. Enter the exact hour and minutes according to a 24-hour clock. Estimates may be provided with “Approx.” placed before the time.
+			The <b>date and time pronounced dead</b> must be completed by the person who pronounces death.<template is="dom-if" if="{{moreA}}"> <a class="more" on-click=toggleMoreA>Show More</a></template><template is="dom-if" if="{{!moreA}}"> <span>This may be the pronouncing physician, pronouncing/certifying physician, or the medical examiner or coroner. Spell out the name of the month. Use four digits for the year. Enter the exact hour and minutes according to a 24-hour clock. Estimates may be provided with “Approx.” placed before the time. <a class="more" on-click=toggleMoreA>Show Less</a></span></template>
 			</p>
 
 			<p>The <b>signature of person pronouncing death, license number, and date signed</b> only need to be completed by the pronouncing physician when the pronouncing physician is different from the certifying physician.</p>
@@ -21,11 +21,26 @@
 		</span>
 </div>
 	</template>
-</dom-module>
-<script>
+	<script>
 Polymer({
-	is:"hbcod-pronouncingdeath"
+	is:"hbcod-pronouncingdeath",
+	properties: {
+      moreA: {
+      	type: Boolean,
+    	reflectToAttribute: true,
+      	value: true
+      },
+    },
+    toggleMoreA: function(){
+    	console.log(this.moreA);
+    	//this.set(this.$.moreA,!(this.$.moreA))
+    this.moreA=!(this.moreA);
+    console.log(this.moreA);
+
+    }
+
 
 });
 
 </script>
+</dom-module>
