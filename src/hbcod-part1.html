@@ -21,8 +21,6 @@
 <p>Each condition in Part I should cause the condition above it. A facsimile of Part I is displayed below.</p>
 
 <p>A <i>specific</i> underlying cause of death should be reported on the lowest line used in Part I so there is no ambiguity about the etiology of this cause or any question as to why it developed. In other words, the reported underlying cause should <u>not</u> be the result of another condition. For example, sepsis is not specific because a number of different conditions may have resulted in sepsis, whereas human immunodeficiency virus syndrome is specific. Other significant conditions that contributed to the death, but did not lead to the underlying cause given in Part I, are reported in Part II.</p>
-
-<p>For clarity, do <u>not</u> use parenthetical statements and abbreviations when reporting the cause of death.</p>
 <br/>
       <p>
         <img class="container" src="/images/Part1.png" on-click="openDialog"/>
@@ -47,14 +45,22 @@ The <i>mechanism</i> of death (e.g., cardiac or respiratory arrest) should <u>no
 <b>Lines (b), (c), and (d), due to (or as a consequence of)</b>
 </p>
 <p>
-On line (b) report the disease, injury, or complication, if any, that gave rise to the immediate cause of death reported on line (a). If this in turn resulted from a further condition, record that condition on line (c). If this in turn resulted from a further condition, record that condition on line (d). For as many conditions as are involved, write the full sequence, one condition per line, with the most recent condition at the top, and the underlying cause of death at the bottom. If more than four lines are needed, writing "due to" between conditions on the same line is the same as adding an additional line and is acceptable. Do <u>not</u> use the space in Part II to continue the sequence in Part I.
+On line (b) report the disease, condition, or complication, if any, that gave rise to the immediate cause of death reported on line (a). If this in turn resulted from a further condition, record that condition on line (c). If this in turn resulted from a further condition, record that condition on line (d). For as many conditions as are involved, write the full sequence, one condition per line, with the most recent condition at the top, and the underlying cause of death at the bottom. If more than four lines are needed, writing "due to" between conditions on the same line is the same as adding an additional line and is acceptable. Do <u>not</u> use the space in Part II to continue the sequence in Part I.
 </p>
 <p>
 The words "due to (or as a consequence of)," which are printed between the lines of Part I, apply not only in sequences with an etiological or pathological basis and usually a chronological time ordering, but also to sequences in which an antecedent condition is believed to have prepared the way for a subsequent cause by damage to tissues or impairment of function.
 </p>
-<br/>
 <p>
-  In the case of neoplasms, <a class="buttons" href="#" on-click="openDone">click here.</a>
+  Please click on the following conditions for specific instructions:
+  <ul>
+    <li><a class="buttons" href="#" on-click="openDone">neoplasms</a></li>
+    <li><a href="#" on-click="openDtwo">organ system failure</a></li>
+    <li><a href="#" on-click="openDfour">medical errors</a></li>
+    <li><a href="#" on-click="openDfive">drugs</a></li>
+    <li><a href="#" on-click="openDthree">dementia</a></li>
+    <li><a href="#" on-click="openDsix">diabetes</a></li>
+  </ul>
+
 </p>
 
 <paper-dialog id="dOne" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
@@ -78,10 +84,6 @@ The words "due to (or as a consequence of)," which are printed between the lines
 </paper-dialog>
 
 
-<p>
-  In the case of an organ system failure, <a href="#" on-click="openDtwo">click here.</a>
-</p>
-
 <paper-dialog id="dTwo" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
 <div>
     <p>
@@ -94,10 +96,6 @@ The words "due to (or as a consequence of)," which are printed between the lines
       </div>
 </paper-dialog>
 
-
-<p>
-  In the case of a medical error, <a href="#" on-click="openDfour">click here.</a>
-</p>
 
 <paper-dialog id="dFour" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
 <div>
@@ -118,10 +116,6 @@ The words "due to (or as a consequence of)," which are printed between the lines
       </div>
 </paper-dialog>
 
-
-<p>
-  In the case of a drug-related death, <a href="#" on-click="openDfive">click here.</a>
-</p>
 
 <paper-dialog id="dFive" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
 <div>
@@ -157,10 +151,6 @@ The words "due to (or as a consequence of)," which are printed between the lines
 </paper-dialog> -->
 
 
-<p>
- In the case of dementia, <a href="#" on-click="openDthree">click here.</a>
-</p>
-
 <paper-dialog id="dThree" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
 <div>
     <p>
@@ -172,10 +162,6 @@ The words "due to (or as a consequence of)," which are printed between the lines
       </div>
 </paper-dialog>
 
-
-<p>
- In the case of diabetes, <a href="#" on-click="openDsix">click here.</a>
-</p>
 
 <paper-dialog id="dSix" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
 <div>
@@ -199,10 +185,9 @@ The words "due to (or as a consequence of)," which are printed between the lines
 Space is provided to the right of lines (a), (b), (c), and (d) for recording the interval between the presumed onset of the condition (not the diagnosis of the condition) and the time of death. This information should be entered for all conditions in Part I. 
 </p>
 <p>
-These intervals usually are established by the physician on the basis of available information. In some cases the interval will have to be estimated and the term "approximately" may be used. General terms, such as minutes, hours, days, or years, are acceptable, if necessary. If the time of onset is entirely unknown, state that the interval is "unknown." Do <u>not</u> leave these items blank. 
+These intervals usually are established by the physician on the basis of available information. In some cases the interval will have to be estimated and the term "approximately" may be used. General terms, such as minutes, hours, days, or years, are acceptable, if necessary. Please do not use dashes. If the time of onset is entirely unknown, state that the interval is "unknown." Please do <u>not</u> leave these items blank. 
 </p>
-<p>This information is useful in coding certain diseases and also provides a useful check on the accuracy of the reported sequence of conditions.
-</p>
+
     </span>
     </div>
   </template>

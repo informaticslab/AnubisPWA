@@ -125,3 +125,7 @@ paper-item{
 a{
 	cursor: pointer;
 }
+
+a.more{
+	font-size: 12px;
+}
