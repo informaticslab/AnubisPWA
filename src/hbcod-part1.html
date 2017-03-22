@@ -190,8 +190,9 @@ The words "due to (or as a consequence of)," which are printed between the lines
 
 
 <p>
-Space is provided to the right of lines (a), (b), (c), and (d) for recording the interval between the presumed onset of the condition (not the diagnosis of the condition) and the time of death. This information should be entered for all conditions in Part I. <template is="dom-if" if="{{moreE}}"><a class="more" on-click=toggleMoreE>Show More</a></template><template is="dom-if" if="{{!moreE}}">
+Space is provided to the right of lines (a), (b), (c), and (d) for recording the interval between the presumed onset of the condition (not the diagnosis of the condition) and the time of death. This information should be entered for all conditions in Part I. <template is="dom-if" if="{{moreE}}"><a class="more" on-click=toggleMoreE>Show More</a></template>
 </p>
+<template is="dom-if" if="{{!moreE}}">
 <p>
 These intervals usually are established by the physician on the basis of available information. In some cases the interval will have to be estimated and the term "approximately" may be used. General terms, such as minutes, hours, days, or years, are acceptable, if necessary. Please do <u>not</u> use dashes. If the time of onset is entirely unknown, state that the interval is "unknown." Please do <u>not</u> leave these items blank. 
  <a class="more" on-click=toggleMoreE>Show Less</a>
