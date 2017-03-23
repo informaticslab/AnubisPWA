@@ -10,5 +10,9 @@ module.exports = {
   stripPrefix: '/build/bundled/',
   navigateFallback: '/index.html',
   maximumFileSizeToCacheInBytes: 4097152,
-  verbose: true
+  verbose: true,
+  runtimeCaching: [{
+    urlPattern: "index.html",
+    handler: 'networkFirst'
+  }]
 };
