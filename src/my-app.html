@@ -166,16 +166,17 @@
           value:"welcome"
         },
       },
-      //  observers: [
-      //   '_routePageChanged(routeData.page)'
-      // ],
+       observers: [
+        '_routeDataChanged(routeData.user)'
+      ],
 
-      _routePageChanged: function(page) {
-        this.page = page || 'welcome';
+      _routeDataChanged: function(page) {
+        this.page=this.routeData.page;
       },
 
       _pageChanged: function(page) {
         //console.log("page changed", page);
+        
         if(page)
         {
           // Load page import on demand. Show 404 page if fails
@@ -183,11 +184,17 @@
 
           //console.log(resolvedPageUrl);
           this.importHref(resolvedPageUrl, null, this._showPage404, true);
-          this.pageURL=page;
+          //this.pageURL=page;
           if(this.$.adl.narrow)
           {
             this.$.mainDrawer.close();
           }
+          this.set('route.path','/'+this.page+'/');
+        }
+        else{
+
+          this.page="welcome"
+          this.set('route.path','/'+this.page+'/');
         }
       },
       _showPage404: function() {
